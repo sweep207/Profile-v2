@@ -119,12 +119,13 @@ html,body{
       </div>
       <div class="section">Theo dõi nhanh</div>
       <div class="grid">
+        <a class="tile" href="https://beacons.ai/sweep207" target="_blank" rel="noopener">🔰 <strong>Website</strong>🔰 </a>
         <a class="tile" href="https://www.youtube.com/@sweep207" target="_blank" rel="noopener">▶ <strong>YouTube</strong></a>
         <a class="tile" href="https://www.facebook.com/im.dvu2407" target="_blank" rel="noopener">📘 <strong>Facebook</strong></a>
         <a class="tile" href="https://zalo.me/0853261605" target="_blank" rel="noopener">💬 <strong>Zalo</strong></a>
         <a class="tile" href="https://www.tiktok.com/@sweep2806" target="_blank" rel="noopener">👀 <strong>Tiktok</strong></a>
-        <a class="tile" href="#" id="copyMail">📎 <strong>Copy Email</strong></a>
-        <a class="tile" href="#" id="copyPhone">📞 <strong>Copy Phone</strong></a>
+        <a class="tile" href="https://sweep207.github.io/Donate/donate.html" target="_blank" rel="noopener">☕️ <strong>Donate</strong></a>
+        
       </div>
       <div class="footer">© 2025 • Đặng Vũ | Developer</div>
     </section>
@@ -143,13 +144,6 @@ const audio=document.getElementById('backgroundAudio');
 const btn=document.getElementById('toggleMusicBtn');
 (async()=>{try{await audio.play();}catch{btn.textContent='🔈 Bật nhạc';}})();
 btn.addEventListener('click',async()=>{ if(audio.paused){await audio.play(); btn.textContent='🔊 Tắt nhạc';} else { audio.pause(); btn.textContent='🔈 Bật nhạc'; }});
-
-// Toast + copy
-const toast=document.getElementById('toast');
-function showToast(text){ toast.textContent=text; toast.style.display='block'; clearTimeout(showToast.t); showToast.t=setTimeout(()=>toast.style.display='none',1500); }
-function safeCopy(t){ if(navigator.clipboard?.writeText){navigator.clipboard.writeText(t).then(()=>showToast('Đã copy!'));} else { const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); showToast('Đã copy!'); }}
-document.getElementById('copyMail')?.addEventListener('click',(e)=>{e.preventDefault(); safeCopy('dangtoanvu07@gmail.com')});
-document.getElementById('copyPhone')?.addEventListener('click',(e)=>{e.preventDefault(); safeCopy('0853261605')});
 
 // Avatar click hearts
 const avatar=document.getElementById('avatar');
